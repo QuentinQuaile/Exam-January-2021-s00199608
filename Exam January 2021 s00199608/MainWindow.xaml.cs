@@ -23,6 +23,10 @@ namespace Exam_January_2021_s00199608
         public MainWindow()
         {
             InitializeComponent();
+            Current CurrAccount = new Current("Jim", "Bob", 15000);
+            Current CurrAccount1 = new Current("Thomas", "Riley", 8000);
+            Saving CurrAccount2 = new Saving("Martha", "Steward", 1200);
+            Saving CurrAccount3 = new Saving("Louis", "Lane", 22000);
         }
     }
 }

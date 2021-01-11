@@ -32,25 +32,29 @@ namespace Exam_January_2021_s00199608
     public class Current : Accounts
     {
         public int InterestRate = 3;
-        public Current()
+        public Current(string fName, string lName, double balance)
         {
 
         }
         public override double CalculateInterest()
         {
-            throw new NotImplementedException();
+            double interest;
+            interest = balance* InterestRate;
+            return interest;
         }
     }
     public class Saving : Accounts
     {
         public int InterestRate = 6;
-        public Saving()
+        public Saving(string fName, string lName, double balance)
         {
 
         }
         public override double CalculateInterest()
         {
-            throw new NotImplementedException();
+            double interest;
+            interest = balance * InterestRate;
+            return interest;
         }
     }
 }
