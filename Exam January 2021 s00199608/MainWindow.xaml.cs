@@ -26,11 +26,16 @@ namespace Exam_January_2021_s00199608
         ObservableCollection<Accounts> CurrentAccount = new ObservableCollection<Accounts>();
         public MainWindow()
         {
+            DateTime dateTime = new DateTime();
+            dateTime = DateTime.Now;
+
+
+
             InitializeComponent();
-            Current CurrAccount = new Current(15000, "Bob", "Jim");
-            Current CurrAccount1 = new Current(8000, "Riley", "Thomas");
-            Saving SavAccount = new Saving(1200, "Steward", "Martha");
-            Saving SavAccount1 = new Saving(22000, "Lane", "Louis");
+            Current CurrAccount = new Current(15000, "Bob", "Jim", "Current",dateTime);
+            Current CurrAccount1 = new Current(8000, "Riley", "Thomas","Current", dateTime);
+            Saving SavAccount = new Saving(1200, "Steward", "Martha","Saving", dateTime);
+            Saving SavAccount1 = new Saving(22000, "Lane", "Louis","Saving", dateTime);
 
             Account.Add(CurrAccount);
             Account.Add(CurrAccount1);
@@ -46,11 +51,11 @@ namespace Exam_January_2021_s00199608
             {
                 listBox.ItemsSource = Account;
             }
-            if (CurrentAcc.IsChecked == true)
+            else if (CurrentAcc.IsChecked == true)
             {
                 listBox.ItemsSource = CurrentAccount;
             }
-            if (SavingAcc.IsChecked == true)
+            else if (SavingAcc.IsChecked == true)
             {
                 listBox.ItemsSource = SavingAccount;
             }
@@ -66,11 +71,11 @@ namespace Exam_January_2021_s00199608
             {
                 listBox.ItemsSource = Account;
             }
-            if (CurrentAcc.IsChecked == true)
+            else if (CurrentAcc.IsChecked == true)
             {
                 listBox.ItemsSource = CurrentAccount;
             }
-            if (SavingAcc.IsChecked == true)
+            else if (SavingAcc.IsChecked == true)
             {
                 listBox.ItemsSource = SavingAccount;
             }
@@ -86,11 +91,11 @@ namespace Exam_January_2021_s00199608
             {
                 listBox.ItemsSource = Account;
             }
-            if (CurrentAcc.IsChecked == true)
+            else if (CurrentAcc.IsChecked == true)
             {
                 listBox.ItemsSource = CurrentAccount;
             }
-            if (SavingAcc.IsChecked == true)
+            else if (SavingAcc.IsChecked == true)
             {
                 listBox.ItemsSource = SavingAccount;
             }
@@ -106,11 +111,11 @@ namespace Exam_January_2021_s00199608
             {
                 listBox.ItemsSource = Account;
             }
-            if (CurrentAcc.IsChecked == true)
+            else  if (CurrentAcc.IsChecked == true)
             {
                 listBox.ItemsSource = CurrentAccount;
             }
-            if (SavingAcc.IsChecked == true)
+            else if (SavingAcc.IsChecked == true)
             {
                 listBox.ItemsSource = SavingAccount;
             }
@@ -126,11 +131,11 @@ namespace Exam_January_2021_s00199608
             {
                 listBox.ItemsSource = Account;
             }
-            if (CurrentAcc.IsChecked == true)
+            else if (CurrentAcc.IsChecked == true)
             {
                 listBox.ItemsSource = CurrentAccount;
             }
-            if (SavingAcc.IsChecked == true)
+            else if (SavingAcc.IsChecked == true)
             {
                 listBox.ItemsSource = SavingAccount;
             }
@@ -149,8 +154,9 @@ namespace Exam_January_2021_s00199608
                 firstName.Text = selectedAccount.fName;
                 lastName.Text = selectedAccount.lName;
                 balanceBlock.Text = selectedAccount.Balance.ToString();
-
+                accountBlock.Text = selectedAccount.Account;
                 balanceBlock1.Text = selectedAccount.Balance.ToString();
+                InterestBlock.Text = selectedAccount.InterestDate.ToString("d");
 
 
             }
@@ -192,6 +198,46 @@ namespace Exam_January_2021_s00199608
                 decimal interest = selectedAccount.CalculateInterest();
                 balanceBlock.Text = interest.ToString();
                 balanceBlock1.Text = interest.ToString();
+            }
+        }
+
+        private void CurrentAcc_Click(object sender, RoutedEventArgs e)
+        {
+            if (CurrentAcc.IsChecked == true && SavingAcc.IsChecked == true)
+            {
+                listBox.ItemsSource = Account;
+            }
+            else if (CurrentAcc.IsChecked == true)
+            {
+                listBox.ItemsSource = CurrentAccount;
+            }
+            else if (SavingAcc.IsChecked == true)
+            {
+                listBox.ItemsSource = SavingAccount;
+            }
+            else
+            {
+                listBox.ItemsSource = null;
+            }
+        }
+
+        private void SavingAcc_Click(object sender, RoutedEventArgs e)
+        {
+            if (CurrentAcc.IsChecked == true && SavingAcc.IsChecked == true)
+            {
+                listBox.ItemsSource = Account;
+            }
+            else if (CurrentAcc.IsChecked == true)
+            {
+                listBox.ItemsSource = CurrentAccount;
+            }
+            else if (SavingAcc.IsChecked == true)
+            {
+                listBox.ItemsSource = SavingAccount;
+            }
+            else
+            {
+                listBox.ItemsSource = null;
             }
         }
     }
