@@ -14,6 +14,10 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Collections.ObjectModel;
 
+/*
+ * Student Number: s00199608
+ * Github Link: https://github.com/QuentinQuaile/Exam-January-2021-s00199608
+ */
 namespace Exam_January_2021_s00199608
 {
     /// <summary>
@@ -170,9 +174,12 @@ namespace Exam_January_2021_s00199608
             Accounts selectedAccount = listBox.SelectedItem as Accounts;
             if (selectedAccount != null)
             {
-                decimal transaction = selectedAccount.Deposit(bob);
-                balanceBlock.Text = transaction.ToString();
-                balanceBlock1.Text = transaction.ToString();
+                if (bob >= 0)
+                {
+                    decimal transaction = selectedAccount.Deposit(bob);
+                    balanceBlock.Text = transaction.ToString();
+                    balanceBlock1.Text = transaction.ToString();
+                }
             }
         }
 
