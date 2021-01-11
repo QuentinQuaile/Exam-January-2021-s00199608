@@ -25,18 +25,19 @@ namespace Exam_January_2021_s00199608
     /// </summary>
     public partial class MainWindow : Window
     {
+        //Lists to display in listbox
         ObservableCollection<Accounts> Account = new ObservableCollection<Accounts>();
         ObservableCollection<Accounts> SavingAccount = new ObservableCollection<Accounts>();
         ObservableCollection<Accounts> CurrentAccount = new ObservableCollection<Accounts>();
         public MainWindow()
         {
-            DateTime dateTime = new DateTime();
+            DateTime dateTime = new DateTime(); //DEclaring variables
             dateTime = DateTime.Now;
 
 
 
             InitializeComponent();
-            Current CurrAccount = new Current(15000, "Bob", "Jim", "Current",dateTime);
+            Current CurrAccount = new Current(15000, "Bob", "Jim", "Current",dateTime); //creating accounts
             Current CurrAccount1 = new Current(8000, "Riley", "Thomas","Current", dateTime);
             Saving SavAccount = new Saving(1200, "Steward", "Martha","Saving", dateTime);
             Saving SavAccount1 = new Saving(22000, "Lane", "Louis","Saving", dateTime);
@@ -44,16 +45,16 @@ namespace Exam_January_2021_s00199608
             Account.Add(CurrAccount);
             Account.Add(CurrAccount1);
             Account.Add(SavAccount);
-            Account.Add(SavAccount1);
+            Account.Add(SavAccount1); //Adding accounts to lists
 
             SavingAccount.Add(SavAccount);
             SavingAccount.Add(SavAccount1);
             CurrentAccount.Add(CurrAccount);
             CurrentAccount.Add(CurrAccount1);
 
-            if (CurrentAcc.IsChecked == true && SavingAcc.IsChecked == true)
+            if (CurrentAcc.IsChecked == true && SavingAcc.IsChecked == true) //Checking if check boxes are checked
             {
-                listBox.ItemsSource = Account;
+                listBox.ItemsSource = Account;//Displaying accounts
             }
             else if (CurrentAcc.IsChecked == true)
             {
@@ -69,7 +70,7 @@ namespace Exam_January_2021_s00199608
             }
         }
 
-        private void CurrentAcc_Checked(object sender, RoutedEventArgs e)
+        private void CurrentAcc_Checked(object sender, RoutedEventArgs e) //checks if it is checked
         {
             if (CurrentAcc.IsChecked == true && SavingAcc.IsChecked == true)
             {
@@ -89,7 +90,7 @@ namespace Exam_January_2021_s00199608
             }
         }
 
-        private void SavingAcc_Checked(object sender, RoutedEventArgs e)
+        private void SavingAcc_Checked(object sender, RoutedEventArgs e) //checks if it is checked
         {
             if (CurrentAcc.IsChecked == true && SavingAcc.IsChecked == true)
             {
@@ -109,7 +110,7 @@ namespace Exam_January_2021_s00199608
             }
         }
 
-        private void CurrentAcc_Unchecked(object sender, RoutedEventArgs e)
+        private void CurrentAcc_Unchecked(object sender, RoutedEventArgs e)//checks if it is checked
         {
             if (CurrentAcc.IsChecked == true && SavingAcc.IsChecked == true)
             {
@@ -129,7 +130,7 @@ namespace Exam_January_2021_s00199608
             }
         }
 
-        private void SavingAcc_Unchecked(object sender, RoutedEventArgs e)
+        private void SavingAcc_Unchecked(object sender, RoutedEventArgs e)//checks if it is checked 
         {
             if (CurrentAcc.IsChecked == true && SavingAcc.IsChecked == true)
             {
@@ -151,11 +152,11 @@ namespace Exam_January_2021_s00199608
 
         private void listBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Accounts selectedAccount = listBox.SelectedItem as Accounts;
+            Accounts selectedAccount = listBox.SelectedItem as Accounts;//Checks what you have selected in list box
 
             if(selectedAccount != null)
             {
-                firstName.Text = selectedAccount.fName;
+                firstName.Text = selectedAccount.fName; //Fills in the text blocks
                 lastName.Text = selectedAccount.lName;
                 balanceBlock.Text = selectedAccount.Balance.ToString();
                 accountBlock.Text = selectedAccount.Account;
@@ -176,7 +177,7 @@ namespace Exam_January_2021_s00199608
             {
                 if (bob >= 0)
                 {
-                    decimal transaction = selectedAccount.Deposit(bob);
+                    decimal transaction = selectedAccount.Deposit(bob);//Deposit money
                     balanceBlock.Text = transaction.ToString();
                     balanceBlock1.Text = transaction.ToString();
                 }
@@ -191,13 +192,13 @@ namespace Exam_January_2021_s00199608
             Accounts selectedAccount = listBox.SelectedItem as Accounts;
             if (selectedAccount != null)
             {
-                decimal transaction = selectedAccount.Withdraw(bob);
+                decimal transaction = selectedAccount.Withdraw(bob); //this will withdraw money
                 balanceBlock.Text = transaction.ToString();
                 balanceBlock1.Text = transaction.ToString();
             }
         }
 
-        private void button_Copy1_Click(object sender, RoutedEventArgs e)
+        private void button_Copy1_Click(object sender, RoutedEventArgs e) //This will calculate interest
         {
             Accounts selectedAccount = listBox.SelectedItem as Accounts;
             if (selectedAccount != null)
@@ -208,7 +209,7 @@ namespace Exam_January_2021_s00199608
             }
         }
 
-        private void CurrentAcc_Click(object sender, RoutedEventArgs e)
+        private void CurrentAcc_Click(object sender, RoutedEventArgs e)//checks if it is checked
         {
             if (CurrentAcc.IsChecked == true && SavingAcc.IsChecked == true)
             {
@@ -228,7 +229,7 @@ namespace Exam_January_2021_s00199608
             }
         }
 
-        private void SavingAcc_Click(object sender, RoutedEventArgs e)
+        private void SavingAcc_Click(object sender, RoutedEventArgs e)//checks if it is checked
         {
             if (CurrentAcc.IsChecked == true && SavingAcc.IsChecked == true)
             {
