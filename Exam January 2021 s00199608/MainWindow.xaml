@@ -9,8 +9,8 @@
     <Grid>
         <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="317" Margin="51,78,0,0" VerticalAlignment="Top" Width="235"/>
         <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="51,57,0,0" TextWrapping="Wrap" Text="Accounts List" VerticalAlignment="Top"/>
-        <CheckBox x:Name="CurrentAcc" Content="Current Accounts" HorizontalAlignment="Left" Margin="51,37,0,0" VerticalAlignment="Top"/>
-        <CheckBox x:Name="SavingAcc" Content="Savings Accounts" HorizontalAlignment="Left" Margin="186,37,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="CurrentAcc" Content="Current Accounts" HorizontalAlignment="Left" Margin="51,37,0,0" VerticalAlignment="Top" Checked="CurrentAcc_Checked" Unchecked="CurrentAcc_Unchecked"/>
+        <CheckBox x:Name="SavingAcc" Content="Savings Accounts" HorizontalAlignment="Left" Margin="186,37,0,0" VerticalAlignment="Top" Checked="SavingAcc_Checked" Unchecked="SavingAcc_Unchecked"/>
         <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="329,123,0,0" TextWrapping="Wrap" Text="First Name" VerticalAlignment="Top"/>
         <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Margin="329,158,0,0" TextWrapping="Wrap" Text="Last Name" VerticalAlignment="Top"/>
         <TextBlock x:Name="textBlock3" HorizontalAlignment="Left" Margin="329,194,0,0" TextWrapping="Wrap" Text="Balance" VerticalAlignment="Top"/>
