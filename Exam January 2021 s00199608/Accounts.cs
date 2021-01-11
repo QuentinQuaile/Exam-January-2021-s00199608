@@ -22,13 +22,13 @@ namespace Exam_January_2021_s00199608
         }
         //Method
         public abstract double CalculateInterest();
-        public void Deposit()
+        public void Deposit(double Transaction)
         {
-
+            Balance = Balance + Transaction;
         }
-        public void Withdraw()
+        public void Withdraw(double Transaction)
         {
-
+            Balance = Balance - Transaction;
         }
     }
     public class Current : Accounts

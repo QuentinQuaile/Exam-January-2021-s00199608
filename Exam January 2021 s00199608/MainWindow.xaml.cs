@@ -139,5 +139,26 @@ namespace Exam_January_2021_s00199608
                 listBox.ItemsSource = null;
             }
         }
+
+        private void listBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Accounts selectedAccount = listBox.SelectedItem as Accounts;
+
+            if(selectedAccount != null)
+            {
+                firstName.Text = selectedAccount.fName;
+                lastName.Text = selectedAccount.lName;
+                balanceBlock.Text = selectedAccount.Balance.ToString();
+
+                balanceBlock1.Text = selectedAccount.Balance.ToString();
+
+
+            }
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

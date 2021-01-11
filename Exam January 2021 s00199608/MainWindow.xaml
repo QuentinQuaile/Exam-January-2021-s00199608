@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="317" Margin="51,78,0,0" VerticalAlignment="Top" Width="235"/>
+        <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="317" Margin="51,78,0,0" VerticalAlignment="Top" Width="235" SelectionChanged="listBox_SelectionChanged"/>
         <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="51,57,0,0" TextWrapping="Wrap" Text="Accounts List" VerticalAlignment="Top"/>
         <CheckBox x:Name="CurrentAcc" Content="Current Accounts" HorizontalAlignment="Left" Margin="51,37,0,0" VerticalAlignment="Top" Checked="CurrentAcc_Checked" Unchecked="CurrentAcc_Unchecked"/>
         <CheckBox x:Name="SavingAcc" Content="Savings Accounts" HorizontalAlignment="Left" Margin="186,37,0,0" VerticalAlignment="Top" Checked="SavingAcc_Checked" Unchecked="SavingAcc_Unchecked"/>
@@ -17,18 +17,18 @@
         <TextBlock x:Name="textBlock4" HorizontalAlignment="Left" Margin="329,230,0,0" TextWrapping="Wrap" Text="Account Type" VerticalAlignment="Top"/>
         <TextBlock x:Name="textBlock4_Copy" HorizontalAlignment="Left" Margin="329,263,0,0" TextWrapping="Wrap" Text="Balance" VerticalAlignment="Top"/>
         <TextBlock x:Name="textBlock4_Copy1" HorizontalAlignment="Left" Margin="329,298,0,0" TextWrapping="Wrap" Text="Interest Date" VerticalAlignment="Top"/>
-        <TextBlock x:Name="textBlock1_Copy" HorizontalAlignment="Left" Margin="489,126,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
-        <TextBlock x:Name="textBlock1_Copy1" HorizontalAlignment="Left" Margin="489,158,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
-        <TextBlock x:Name="textBlock1_Copy2" HorizontalAlignment="Left" Margin="489,194,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
-        <TextBlock x:Name="textBlock1_Copy3" HorizontalAlignment="Left" Margin="489,230,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
-        <TextBlock x:Name="textBlock1_Copy4" HorizontalAlignment="Left" Margin="489,263,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
-        <TextBlock x:Name="textBlock1_Copy5" HorizontalAlignment="Left" Margin="489,298,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+        <TextBlock x:Name="firstName" HorizontalAlignment="Left" Margin="489,126,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+        <TextBlock x:Name="lastName" HorizontalAlignment="Left" Margin="489,158,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+        <TextBlock x:Name="balanceBlock" HorizontalAlignment="Left" Margin="489,194,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+        <TextBlock x:Name="accountBlock" HorizontalAlignment="Left" Margin="489,230,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+        <TextBlock x:Name="balanceBlock1" HorizontalAlignment="Left" Margin="489,263,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+        <TextBlock x:Name="InterestBlock" HorizontalAlignment="Left" Margin="489,298,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
         <TextBlock x:Name="textBlock1_Copy6" HorizontalAlignment="Left" Margin="329,90,0,0" TextWrapping="Wrap" Text="Account Details" VerticalAlignment="Top"/>
         <TextBlock x:Name="textBlock4_Copy2" HorizontalAlignment="Left" Margin="329,352,0,0" TextWrapping="Wrap" Text="Transaction Amount" VerticalAlignment="Top"/>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="460,351,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="689,108,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="button_Copy" Content="Button" HorizontalAlignment="Left" Margin="689,154,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="button_Copy1" Content="Button" HorizontalAlignment="Left" Margin="689,195,0,0" VerticalAlignment="Top" Width="75"/>
+        <TextBox x:Name="Transaction" HorizontalAlignment="Left" Height="23" Margin="460,351,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="button" Content="Deposit" HorizontalAlignment="Left" Margin="689,108,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
+        <Button x:Name="button_Copy" Content="Withdraw" HorizontalAlignment="Left" Margin="689,154,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="button_Copy1" Content="Interest" HorizontalAlignment="Left" Margin="689,195,0,0" VerticalAlignment="Top" Width="75"/>
 
     </Grid>
 </Window>
