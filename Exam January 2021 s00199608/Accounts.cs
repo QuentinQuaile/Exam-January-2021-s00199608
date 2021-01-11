@@ -11,36 +11,38 @@ namespace Exam_January_2021_s00199608
         //Properties
         public string fName { get; set; }
         public string lName { get; set; }
-        public double Balance { get; set; }
+        public decimal Balance { get; set; }
         public DateTime InterestDate { get; set; }
         //Constructor
-        public Accounts(double balance, string lname, string fname)
+        public Accounts(decimal balance, string lname, string fname)
         {
             Balance = balance;
             fName = fname;
             lName = lname;
         }
         //Method
-        public abstract double CalculateInterest();
-        public void Deposit(double Transaction)
+        public abstract decimal CalculateInterest();
+        public decimal Deposit(decimal Transaction)
         {
             Balance = Balance + Transaction;
+            return Balance;
         }
-        public void Withdraw(double Transaction)
+        public decimal Withdraw(decimal Transaction)
         {
             Balance = Balance - Transaction;
+            return Balance;
         }
     }
     public class Current : Accounts
     {
         public int InterestRate = 3;
-        public Current(double balance, string lname, string fname) : base(balance,lname,fname)
+        public Current(decimal balance, string lname, string fname) : base(balance,lname,fname)
         {
 
         }
-        public override double CalculateInterest()
+        public override decimal CalculateInterest()
         {
-            double interest;
+            decimal interest;
             interest = Balance* InterestRate;
             return interest;
         }
@@ -52,13 +54,13 @@ namespace Exam_January_2021_s00199608
     public class Saving : Accounts
     {
         public int InterestRate = 6;
-        public Saving(double balance, string lname, string fname) : base(balance,lname,fname)
+        public Saving(decimal balance, string lname, string fname) : base(balance,lname,fname)
         {
             
         }
-        public override double CalculateInterest()
+        public override decimal CalculateInterest()
         {
-            double interest;
+            decimal interest;
             interest = Balance * InterestRate;
             return interest;
         }

@@ -158,7 +158,41 @@ namespace Exam_January_2021_s00199608
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
+            string Bob = Transaction.Text;
+            
+            decimal bob = decimal.Parse(Bob);
+            Accounts selectedAccount = listBox.SelectedItem as Accounts;
+            if (selectedAccount != null)
+            {
+                decimal transaction = selectedAccount.Deposit(bob);
+                balanceBlock.Text = transaction.ToString();
+                balanceBlock1.Text = transaction.ToString();
+            }
+        }
 
+        private void button_Copy_Click(object sender, RoutedEventArgs e)
+        {
+            string Bob = Transaction.Text;
+
+            decimal bob = decimal.Parse(Bob);
+            Accounts selectedAccount = listBox.SelectedItem as Accounts;
+            if (selectedAccount != null)
+            {
+                decimal transaction = selectedAccount.Withdraw(bob);
+                balanceBlock.Text = transaction.ToString();
+                balanceBlock1.Text = transaction.ToString();
+            }
+        }
+
+        private void button_Copy1_Click(object sender, RoutedEventArgs e)
+        {
+            Accounts selectedAccount = listBox.SelectedItem as Accounts;
+            if (selectedAccount != null)
+            {
+                decimal interest = selectedAccount.CalculateInterest();
+                balanceBlock.Text = interest.ToString();
+                balanceBlock1.Text = interest.ToString();
+            }
         }
     }
 }
